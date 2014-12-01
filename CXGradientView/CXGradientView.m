@@ -80,7 +80,7 @@
 
 - (void)setupGradientLayer;
 {
-    self.gradientLayer = [[CAGradientLayer alloc] init]
+    self.gradientLayer = [[CAGradientLayer alloc] init];
     [self.layer addSublayer:self.gradientLayer];
 }
 

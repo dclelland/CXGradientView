@@ -12,20 +12,37 @@
 
 @property (nonatomic, strong) CAGradientLayer *gradientLayer;
 
+- (void)setupGradientLayer;
+
 - (NSArray *)CGColorsFromArray:(NSArray *)colors;
 
 @end
 
 @implementation CXGradientView
 
+- (instancetype)init
+{
+    self = [super init];
+    if (self) {
+        [self setupGradientLayer];
+    }
+    return self;
+}
+
+- (instancetype)initWithCoder:(NSCoder *)coder
+{
+    self = [super initWithCoder:coder];
+    if (self) {
+        [self setupGradientLayer];
+    }
+    return self;
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _gradientLayer = [CAGradientLayer layer];
-        _gradientLayer.frame = self.bounds;
-        
-        [self.layer addSublayer:_gradientLayer];
+        [self setupGradientLayer];
     }
     return self;
 }
@@ -33,7 +50,6 @@
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    
     self.gradientLayer.frame = self.bounds;
 }
 
@@ -61,6 +77,12 @@
 }
 
 #pragma mark - Private
+
+- (void)setupGradientLayer;
+{
+    self.gradientLayer = [[CAGradientLayer alloc] init]
+    [self.layer addSublayer:self.gradientLayer];
+}
 
 - (NSArray *)CGColorsFromArray:(NSArray *)colors
 {

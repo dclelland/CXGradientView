@@ -6,14 +6,14 @@
 #
 Pod::Spec.new do |s|
   s.name                    = "CXGradientView"
-  s.version                 = "0.0.1"
+  s.version                 = "0.0.2"
   s.summary                 = "Ultra-basic UIView/CAGradientLayer class. Animates using CATransaction."
   s.homepage                = "https://github.com/dclelland/CXGradientView"
   s.license                 = { :type => 'MIT' }
   s.author                  = { "Daniel Clelland" => "daniel.clelland@gmail.com" }
-  s.source                  = { :git => "https://github.com/dclelland/CXGradientView.git", :tag => "0.0.1" }
-  s.platform                = :ios, '7.0'
-  s.ios.deployment_target   = '7.0'
+  s.source                  = { :git => "https://github.com/dclelland/CXGradientView.git", :tag => "0.0.2" }
+  s.platform                = :ios, '6.1'
+  s.ios.deployment_target   = '6.1'
   s.ios.source_files        = 'CXGradientView/*.{h,m}'
   s.requires_arc            = true
 end
